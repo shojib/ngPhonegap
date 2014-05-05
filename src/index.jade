@@ -1,0 +1,50 @@
+doctype html
+// if lt IE 7
+    html(xmlns:ng='', class='no-js lt-ie9 lt-ie8 lt-ie7', id='ng-app')
+// if IE 7
+    html(xmlns:ng='', class='no-js lt-ie9 lt-ie8', id='ng-app')
+// if IE 8
+    html(xmlns:ng='', class='no-js lt-ie9', id='ng-app')
+// [if gt IE 8] <!
+html(xmlns:ng='', class='no-js', id='ng-app')
+    // <![endif]
+        
+    head
+        title ngGo
+        meta(charset='utf-8', http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='shortcut icon', type='image/ico' href='')
+        link(rel='stylesheet', href='dist/css/3p/bootstrap.min.css', media='screen')
+        link(rel='stylesheet', href='dist/css/3p/angular-csp.css', media='screen')
+        link(rel='stylesheet', href='dist/css/main.css', media='screen')
+        link(rel='stylesheet', href='dist/css/animation.css', media='screen')
+
+
+    body
+        
+        .container
+
+            //- Main header
+            header
+
+            //- Main view
+            ui-view.slide-reveal(autoscroll="false")
+
+
+            //- Footer
+            footer.text-center.text-muted
+                small 
+                    | (c) 2014 Shojib ngGo.
+                    br
+                    | This seed is based on 
+                    a(href="http://www.angularjs.org") AngularJS, 
+                    a(href="http://requirejs.org") RequireJS, 
+                    a(href="http://coffeescript.org") Coffee-Script
+                    | , and 
+                    a(href="http://jade-lang.com") Jade.
+                br
+                br
+
+        
+        // This includes all the JS files to start the app.
+        script(data-main='dist/modules/main.js', src='dist/libs/requirejs/require.js')
