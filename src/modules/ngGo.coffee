@@ -29,6 +29,9 @@ define [
     "$httpProvider"
     "$translateProvider" 
     ($urlRouterProvider, $httpProvider, $translateProvider) ->
+
+      $httpProvider.defaults.headers.common['X-Requested-With'];
+      $httpProvider.defaults.headers.post['Content-type'];
       
       $translateProvider.useStaticFilesLoader
         prefix: "../i18n/"

@@ -26,10 +26,10 @@
     "grunt-contrib-requirejs": "~0.4.3"
   },
   "folders": {
-    "build": "dist/",
+    "build": "www/",
     "src": "src/",
     "js_src": "src/modules/",
-    "js_build": "dist/modules/",
+    "js_build": "www/modules/",
     "libs": "src/libs/",
     "test": "test/"
   }

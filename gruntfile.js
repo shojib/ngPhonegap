@@ -25,6 +25,18 @@ module.exports = function(grunt) {
         cwd: '<%= pkg.folders.src %>/libs/',
         src: '**/*',
         dest: '<%= pkg.folders.build %>/libs'
+      },
+      config: {
+        expand: true,
+        cwd: '<%= pkg.folders.src %>/',
+        src: 'config.xml',
+        dest: '<%= pkg.folders.build %>'
+      },
+      icon: {
+        expand: true,
+        cwd: '<%= pkg.folders.src %>/',
+        src: 'icon.png',
+        dest: '<%= pkg.folders.build %>'
       }
     },
 
@@ -74,7 +86,7 @@ module.exports = function(grunt) {
     jade: {
       compile: {
         files: {
-          'index.html': '<%= pkg.folders.src %>/index.jade'
+          '<%= pkg.folders.build %>/index.html': '<%= pkg.folders.src %>/index.jade'
         }
       },
       compile_all: {
@@ -128,14 +140,14 @@ module.exports = function(grunt) {
       server: {
         options:  {
           port: 8000,
-          base: 'dist/',
+          base: '<%= pkg.folders.build %>/',
           hostname: 'localhost'
         }
       },
       keepalive: {
         options:  {
           port: 8000,
-          base: 'dist/',
+          base: '<%= pkg.folders.build %>/',
           hostname: 'localhost',
           keepalive: true
         }
@@ -196,8 +208,8 @@ module.exports = function(grunt) {
     'coffee', 
     'jade', 
     'compass', 
-    'requirejs:compile_dev',
-    'tests'
+    'requirejs:compile_dev'
+    // 'tests'
   ]);
   
   // Web task(s).
