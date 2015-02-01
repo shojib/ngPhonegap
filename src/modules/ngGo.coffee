@@ -17,6 +17,8 @@ define [
     "ngAnimate"
     "ngGo.common"
     "ngGo.header"
+    "ngGo.footer" 
+    "ngGo.settings"
     "ngGo.error"
     "ngGo.home"
     "ngGo.poem"
@@ -47,7 +49,9 @@ define [
   ])
 
   # Default runtime
-  ngGo.run ->
+  ngGo.run(["$rootScope", (rootScope) ->
+    rootScope.licenseYear = 2015
+  ])
   
   
   # Return

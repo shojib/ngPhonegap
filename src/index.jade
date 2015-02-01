@@ -2,15 +2,15 @@
 
 
 doctype html
-// if lt IE 7
+//- if lt IE 7
     html(xmlns:ng='', class='no-js lt-ie9 lt-ie8 lt-ie7', id='ng-app')
-// if IE 7
+//- if IE 7
     html(xmlns:ng='', class='no-js lt-ie9 lt-ie8', id='ng-app')
-// if IE 8
+//- if IE 8
     html(xmlns:ng='', class='no-js lt-ie9', id='ng-app')
-// [if gt IE 8] <!
+//- [if gt IE 8] <!
 html(xmlns:ng='', class='no-js', id='ng-app')
-    // <![endif]
+    //- <![endif]
         
     head
         title ngGo
@@ -19,7 +19,7 @@ html(xmlns:ng='', class='no-js', id='ng-app')
         link(rel='shortcut icon', type='image/ico' href='')
         link(rel='stylesheet', href='#{buildPath}libs/framework7/dist/css/framework7.css', media='screen')
         link(rel='stylesheet', href='#{buildPath}css/3p/angular-csp.css', media='screen')
-        //- link(rel='stylesheet', href='#{buildPath}css/main.css', media='screen')
+        link(rel='stylesheet', href='#{buildPath}css/main.css', media='screen')
 
 
     body
@@ -31,23 +31,15 @@ html(xmlns:ng='', class='no-js', id='ng-app')
                 .pages
                     .page
                         ui-view.slide-reveal(autoscroll="false")
+                        
+                        //- Footer widget
+                        footer
 
-                        //- Footer
-                        footer.content-block
-                            small 
-                                | (c) 2015 Shojib ngGo.
-                                br
-                                | This seed is based on 
-                                a(href="http://www.angularjs.org") AngularJS, 
-                                a(href="http://requirejs.org") RequireJS, 
-                                a(href="http://coffeescript.org") Coffee-Script
-                                | , and 
-                                a(href="http://jade-lang.com") Jade.
-                            br
-                            br
+                        //- Settings widget
+                        settings
 
         
-        // This includes all the JS files to start the app.
+        //- This includes all the JS files to start the app.
         script(data-main='#{buildPath}modules/main.js', src='#{buildPath}libs/requirejs/require.js')
 
 
