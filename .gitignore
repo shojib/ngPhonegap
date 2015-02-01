@@ -6,3 +6,5 @@ node_modules/
 dist/
 **/libs/
 www/
+platforms/
+plugins/
