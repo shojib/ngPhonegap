@@ -3,6 +3,8 @@
 requirejs.config
   paths:
     angular: "../libs/angular/angular"
+    jquery: "../libs/jquery/dist/jquery"
+    framework7: "../libs/framework7/dist/js/framework7"
     ngCookies: "../libs/angular-cookies/angular-cookies"
     ngTranslate: "../libs/angular-translate/angular-translate"
     ngResource: "../libs/angular-resource/angular-resource"
@@ -19,6 +21,13 @@ requirejs.config
 
     angular:
       exports: "angular"
+
+    jquery:
+      exports: "jquery"
+
+    framework7:
+      deps: ["jquery"]
+      exports: "framework7"
 
     ngResource:
       deps: ["angular"]

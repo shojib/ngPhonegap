@@ -17,37 +17,37 @@ html(xmlns:ng='', class='no-js', id='ng-app')
         meta(charset='utf-8', http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         link(rel='shortcut icon', type='image/ico' href='')
-        link(rel='stylesheet', href='#{buildPath}/css/3p/bootstrap.min.css', media='screen')
-        link(rel='stylesheet', href='#{buildPath}/css/3p/angular-csp.css', media='screen')
-        link(rel='stylesheet', href='#{buildPath}/css/main.css', media='screen')
-        link(rel='stylesheet', href='#{buildPath}/css/animation.css', media='screen')
+        link(rel='stylesheet', href='#{buildPath}libs/framework7/dist/css/framework7.css', media='screen')
+        link(rel='stylesheet', href='#{buildPath}css/3p/angular-csp.css', media='screen')
+        //- link(rel='stylesheet', href='#{buildPath}css/main.css', media='screen')
 
 
     body
         
-        .container
+        .views
+            .view.view-main(data-page="home")
 
-            //- Main header
-            header
+                //- Main header
+                header
 
-            //- Main view
-            ui-view.slide-reveal(autoscroll="false")
+                //- Main view
+                ui-view.slide-reveal(autoscroll="false")
 
 
-            //- Footer
-            footer.text-center.text-muted
-                small 
-                    | (c) 2015 Shojib ngGo.
+                //- Footer
+                footer.text-center.text-muted
+                    small 
+                        | (c) 2015 Shojib ngGo.
+                        br
+                        | This seed is based on 
+                        a(href="http://www.angularjs.org") AngularJS, 
+                        a(href="http://requirejs.org") RequireJS, 
+                        a(href="http://coffeescript.org") Coffee-Script
+                        | , and 
+                        a(href="http://jade-lang.com") Jade.
                     br
-                    | This seed is based on 
-                    a(href="http://www.angularjs.org") AngularJS, 
-                    a(href="http://requirejs.org") RequireJS, 
-                    a(href="http://coffeescript.org") Coffee-Script
-                    | , and 
-                    a(href="http://jade-lang.com") Jade.
-                br
-                br
+                    br
 
         
         // This includes all the JS files to start the app.
-        script(data-main='#{buildPath}/modules/main.js', src='#{buildPath}/libs/requirejs/require.js')
+        script(data-main='#{buildPath}modules/main.js', src='#{buildPath}libs/requirejs/require.js')
