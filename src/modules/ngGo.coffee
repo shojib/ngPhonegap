@@ -28,25 +28,27 @@ define [
     "$urlRouterProvider"
     "$httpProvider"
     "$translateProvider" 
-    ($urlRouterProvider, $httpProvider, $translateProvider) ->
+    "$logProvider"
+    (urlRouterProvider, httpProvider, translateProvider, logProvider) ->
 
-      $httpProvider.defaults.headers.common['X-Requested-With'];
-      $httpProvider.defaults.headers.post['Content-type'];
+      httpProvider.defaults.headers.common['X-Requested-With'];
+      httpProvider.defaults.headers.post['Content-type'];
       
-      $translateProvider.useStaticFilesLoader
+      translateProvider.useStaticFilesLoader
         prefix: "../i18n/"
         suffix: ".json"
-      $translateProvider.preferredLanguage "en_US"
+      translateProvider.preferredLanguage "en_US"
       
-      $urlRouterProvider.when "", "/home"
-      $urlRouterProvider.otherwise "/error/404"
+      urlRouterProvider.when "", "/home"
+      urlRouterProvider.otherwise "/error/404"
+
+      logProvider.debugEnabled true
 
   ])
 
   # Default runtime
-  ngGo.run(["$rootScope", ($rootScope) ->
-
-  ])
+  ngGo.run ->
+  
   
   # Return
   ngGo

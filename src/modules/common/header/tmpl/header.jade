@@ -1,3 +1,8 @@
 .navbar
 	.navbar-inner
-		.center ngGo
+		.left.sliding
+			a.back.link(ng-href="/#/home", ng-if="!isHome")
+				i.icon.icon-back
+		.center.sliding ngGo{{ subtitle }}
+		.right.sliding
+			i.icon.icon-bars

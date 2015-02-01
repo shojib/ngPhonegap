@@ -8,8 +8,8 @@ define ["angular"], (angular) ->
   Home = angular.module("ngGo.home", ["ui.router"])
 
   # Router
-  Home.config ["$stateProvider", (state_provider) ->
-    state_provider.state "home",
+  Home.config ["$stateProvider", (stateProvider) ->
+    stateProvider.state "home",
       url: "/home"
       templateUrl: "/modules/home/tmpl/home.html"
   ]
