@@ -31,7 +31,8 @@ define [
     "$httpProvider"
     "$translateProvider" 
     "$logProvider"
-    (urlRouterProvider, httpProvider, translateProvider, logProvider) ->
+    "$compileProvider"
+    (urlRouterProvider, httpProvider, translateProvider, logProvider, compileProvider) ->
 
       httpProvider.defaults.headers.common['X-Requested-With'];
       httpProvider.defaults.headers.post['Content-type'];
@@ -43,8 +44,21 @@ define [
       
       urlRouterProvider.when "", "/home"
       urlRouterProvider.otherwise "/error/404"
+      
 
-      logProvider.debugEnabled true
+      # Production mode
+      # ================================================
+
+      # Log
+      logProvider.debugEnabled true 
+      
+      # Add debug info [if false unit tests will fail]
+      compileProvider.debugInfoEnabled true
+      
+      # Cluster possible http calls together
+      httpProvider.useApplyAsync true
+
+      # ================================================
 
   ])
 
