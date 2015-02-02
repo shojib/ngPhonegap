@@ -52,7 +52,7 @@ define [
       # Log
       logProvider.debugEnabled true 
       
-      # Add debug info [if false unit tests will fail]
+      # Add debug info (if false unit tests will fail)
       compileProvider.debugInfoEnabled true
       
       # Cluster possible http calls together

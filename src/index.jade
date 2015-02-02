@@ -3,23 +3,23 @@
 
 doctype html
 //- if lt IE 7
-    html(xmlns:ng='', class='no-js lt-ie9 lt-ie8 lt-ie7', id='ng-app')
+    html(xmlns:ng="", class="no-js lt-ie9 lt-ie8 lt-ie7", id="ng-app")
 //- if IE 7
-    html(xmlns:ng='', class='no-js lt-ie9 lt-ie8', id='ng-app')
+    html(xmlns:ng="", class="no-js lt-ie9 lt-ie8", id="ng-app")
 //- if IE 8
-    html(xmlns:ng='', class='no-js lt-ie9', id='ng-app')
+    html(xmlns:ng="", class="no-js lt-ie9", id="ng-app")
 //- [if gt IE 8] <!
-html(xmlns:ng='', class='no-js', id='ng-app')
+html(xmlns:ng="", class="no-js", id="ng-app", ng-strict-di)
     //- <![endif]
         
     head
         title ngGo
-        meta(charset='utf-8', http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        link(rel='shortcut icon', type='image/ico' href='')
-        link(rel='stylesheet', href='#{buildPath}libs/framework7/dist/css/framework7.css', media='screen')
-        link(rel='stylesheet', href='#{buildPath}css/3p/angular-csp.css', media='screen')
-        link(rel='stylesheet', href='#{buildPath}css/main.css', media='screen')
+        meta(charset="utf-8", http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="shortcut icon", type="image/ico" href="")
+        link(rel="stylesheet", href="#{buildPath}libs/framework7/dist/css/framework7.css", media="screen")
+        link(rel="stylesheet", href="#{buildPath}css/3p/angular-csp.css", media="screen")
+        link(rel="stylesheet", href="#{buildPath}css/main.css", media="screen")
 
 
     body
@@ -40,7 +40,7 @@ html(xmlns:ng='', class='no-js', id='ng-app')
 
         
         //- This includes all the JS files to start the app.
-        script(data-main='#{buildPath}modules/main.js', src='#{buildPath}libs/requirejs/require.js')
+        script(data-main="#{buildPath}modules/main.js", src="#{buildPath}libs/requirejs/require.js")
 
 
 
