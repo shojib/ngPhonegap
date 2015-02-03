@@ -3,7 +3,7 @@
 requirejs.config
   paths:
     angular: "../libs/angular/angular"
-    jquery: "../libs/jquery/dist/jquery"
+    # jquery: "../libs/jquery/dist/jquery"
     framework7: "../libs/framework7/dist/js/framework7"
     ngCookies: "../libs/angular-cookies/angular-cookies"
     ngTranslate: "../libs/angular-translate/angular-translate"
@@ -22,11 +22,10 @@ requirejs.config
     angular:
       exports: "angular"
 
-    jquery:
-      exports: "jquery"
+    # jquery:
+    #   exports: "jquery"
 
     framework7:
-      deps: ["jquery"]
       exports: "framework7"
 
     ngResource:
@@ -70,6 +69,7 @@ requirejs.config
 requirejs [
   "angular"
   "ngGo"
+  "framework7"
   "ngAnimate"
   "ngTranslate"
   "ngTranslateLoader"
@@ -82,7 +82,10 @@ requirejs [
 ], (angular, ngGo) ->
 
   "use strict"
+
   angular.bootstrap document, [ngGo["name"]]
+
+  f7 = new Framework7()
 
 
 

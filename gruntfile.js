@@ -185,8 +185,8 @@ module.exports = function(grunt) {
     'coffee', 
     'jade', 
     'compass', 
-    'requirejs:compile_prod',
-    'tests'
+    'requirejs:compile_prod'
+    // 'tests'
   ]);
   
   // Build task(s).

@@ -8,7 +8,7 @@ define [], () ->
   Ctrl = (scope, service) ->
 
     # Default search query
-    scope.search_query = "design"
+    scope.search_query = "Technology"
     
     # Find articles
     scope.find_articles = (event) ->

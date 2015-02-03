@@ -15,7 +15,19 @@ $view-bg-color: #F1F1F1;
 $font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
 $banga-font-family: 'Sharifa';
 
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+.footer {
+	font-size: 8pt;
+}
+
+.panel {
+	background-color: white;
+}
 
 #article {
   padding-bottom: 100px;
