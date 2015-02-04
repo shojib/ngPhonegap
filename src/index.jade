@@ -1,6 +1,8 @@
 - var buildPath = ""
 
-html(xmlns:ng="", class="no-js", id="ng-app", ng-strict-di)
+doctype html
+
+html(xmlns:ng="", class="no-js", id="ng-app")
         
     head
         title ngPhonegap
@@ -12,7 +14,7 @@ html(xmlns:ng="", class="no-js", id="ng-app", ng-strict-di)
         link(rel="stylesheet", href="#{buildPath}css/main.css", media="screen")
 
 
-    body
+    body(ng-strict-di)
 
         //- Settings widget
         settings
@@ -29,7 +31,7 @@ html(xmlns:ng="", class="no-js", id="ng-app", ng-strict-di)
                         footer
 
         
-        //- This includes all the JS files to start the app.
+        //- script(src="#{buildPath}cordova.js")
         script(data-main="#{buildPath}modules/main.js", src="#{buildPath}libs/requirejs/require.js")
 
 

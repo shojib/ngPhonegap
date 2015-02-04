@@ -11,7 +11,7 @@ define ["angular"], (angular) ->
   Home.config ["$stateProvider", (stateProvider) ->
     stateProvider.state "home",
       url: "/home"
-      templateUrl: "/modules/home/tmpl/home.html"
+      templateUrl: "modules/home/tmpl/home.html"
   ]
 
 

@@ -22,7 +22,7 @@ define [
       resolve: 
         service: "service"
       url: "/article"
-      templateUrl: "/modules/article/tmpl/article.html"
+      templateUrl: "modules/article/tmpl/article.html"
       controller: controller
   ]
 

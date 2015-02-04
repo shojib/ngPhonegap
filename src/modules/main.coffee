@@ -2,7 +2,7 @@
 
 requirejs.config
   paths:
-    # cordova: "../cordova"
+    cordova: "../cordova"
     angular: "../libs/angular/angular"
     framework7: "../libs/framework7/dist/js/framework7"
     ngCookies: "../libs/angular-cookies/angular-cookies"
@@ -19,11 +19,7 @@ requirejs.config
 
   shim:
 
-    # cordova:
-    #   exports: "cordova"
-
     angular:
-      # deps: ["cordova"]
       exports: "angular"
 
     framework7:
@@ -65,6 +61,10 @@ requirejs.config
       deps: ["angular", "ngTranslate"]
       exports: "ngTranslateStorageLocal"
 
+    cordova:
+      deps: ["angular", "ngTranslate", "uiRouter", "ngCookies", "ngResource", "framework7"]
+      exports: "cordova"
+
   priority: ["angular"]
 
 requirejs [
@@ -80,6 +80,7 @@ requirejs [
   "ngCookies"
   "ngResource"
   "uiRouter"
+  "cordova"
 ], (angular, ngPhonegap) ->
 
   "use strict"

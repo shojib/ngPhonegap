@@ -31,6 +31,12 @@ module.exports = function(grunt) {
         cwd: '<%= pkg.folders.src %>/',
         src: 'icon.png',
         dest: '<%= pkg.folders.build %>/'
+      },
+      res: {
+        expand: true,
+        cwd: '<%= pkg.folders.src %>/res/',
+        src: '**/*',
+        dest: '<%= pkg.folders.build %>/res'
       }
     },
 

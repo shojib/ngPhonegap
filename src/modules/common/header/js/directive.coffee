@@ -10,7 +10,7 @@ define [], () ->
 		scope: 
 			subtitle: "@"
 		replace: true
-		templateUrl: "/modules/common/header/tmpl/header.html"
+		templateUrl: "modules/common/header/tmpl/header.html"
 		controller: ["$scope", (scope) ->
 			scope.isHome = state.is("home")
 			log.debug scope.isHome

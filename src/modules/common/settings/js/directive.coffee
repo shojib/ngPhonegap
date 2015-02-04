@@ -7,7 +7,7 @@ define [], () ->
 	# Directive function
 	Directive = ->
 		restrict: "E"
-		templateUrl: "/modules/common/settings/tmpl/settings.html"
+		templateUrl: "modules/common/settings/tmpl/settings.html"
 
 
 	# Return

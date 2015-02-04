@@ -8,7 +8,7 @@ define [], () ->
 	Directive = (log, rootScope) ->
 		restrict: "E"
 		replace: true
-		templateUrl: "/modules/common/footer/tmpl/footer.html"
+		templateUrl: "modules/common/footer/tmpl/footer.html"
 		controller: ["$scope", (scope) ->
 			scope.licenseYear = rootScope.licenseYear
 			log.debug scope.licenseYear

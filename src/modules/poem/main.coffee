@@ -14,7 +14,7 @@ define [
   Poem.config ["$stateProvider", (state_provider) ->
     state_provider.state "poem",
       url: "/poem",
-      templateUrl: "/modules/poem/tmpl/poem.html"
+      templateUrl: "modules/poem/tmpl/poem.html"
       controller: controller
   ]
   

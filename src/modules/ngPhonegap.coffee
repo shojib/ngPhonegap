@@ -38,7 +38,7 @@ define [
       httpProvider.defaults.headers.post['Content-type'];
       
       translateProvider.useStaticFilesLoader
-        prefix: "../i18n/"
+        prefix: "./i18n/"
         suffix: ".json"
       translateProvider.preferredLanguage "en_US"
       
@@ -56,7 +56,7 @@ define [
       compileProvider.debugInfoEnabled false
       
       # Cluster possible http calls together
-      httpProvider.useApplyAsync true
+      httpProvider.useApplyAsync false
 
       # ================================================
 
