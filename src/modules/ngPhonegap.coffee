@@ -11,22 +11,22 @@ define [
   "use strict"
   
   # Module
-  ngGo = angular.module("ngGo", [
+  ngPhonegap = angular.module("ngPhonegap", [
     "pascalprecht.translate"
     "ui.router"
     "ngAnimate"
-    "ngGo.common"
-    "ngGo.header"
-    "ngGo.footer" 
-    "ngGo.settings"
-    "ngGo.error"
-    "ngGo.home"
-    "ngGo.poem"
-    "ngGo.article"
+    "ngPhonegap.common"
+    "ngPhonegap.header"
+    "ngPhonegap.footer" 
+    "ngPhonegap.settings"
+    "ngPhonegap.error"
+    "ngPhonegap.home"
+    "ngPhonegap.poem"
+    "ngPhonegap.article"
   ])
 
   # Default configuraton
-  ngGo.config([
+  ngPhonegap.config([
     "$urlRouterProvider"
     "$httpProvider"
     "$translateProvider" 
@@ -63,10 +63,10 @@ define [
   ])
 
   # Default runtime
-  ngGo.run(["$rootScope", (rootScope) ->
+  ngPhonegap.run(["$rootScope", (rootScope) ->
     rootScope.licenseYear = 2015
   ])
   
   
   # Return
-  ngGo
+  ngPhonegap

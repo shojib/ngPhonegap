@@ -8,7 +8,7 @@ define [
   "use strict"
   
   # Module
-  Header = angular.module("ngGo.header", [])
+  Header = angular.module("ngPhonegap.header", [])
 
   # Directive
   Header.directive "header", directive

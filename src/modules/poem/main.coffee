@@ -8,7 +8,7 @@ define [
   "use strict"
   
   # Module
-  Poem = angular.module("ngGo.poem", ["ui.router"])
+  Poem = angular.module("ngPhonegap.poem", ["ui.router"])
   
   # Router configuration
   Poem.config ["$stateProvider", (state_provider) ->

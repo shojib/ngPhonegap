@@ -11,7 +11,7 @@ define [
   "use strict"
   
   # Module
-  Common = angular.module("ngGo.common", [])
+  Common = angular.module("ngPhonegap.common", [])
   
   
   # Return

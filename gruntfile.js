@@ -195,8 +195,8 @@ module.exports = function(grunt) {
     'copy', 
     'coffee', 
     'jade', 
-    'compass', 
-    'requirejs:compile_dev'
+    'compass'
+    // 'requirejs:compile_dev'
     // 'tests'
   ]);
   

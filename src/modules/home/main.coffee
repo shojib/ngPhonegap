@@ -5,7 +5,7 @@ define ["angular"], (angular) ->
   "use strict";
 
   # Module
-  Home = angular.module("ngGo.home", ["ui.router"])
+  Home = angular.module("ngPhonegap.home", ["ui.router"])
 
   # Router
   Home.config ["$stateProvider", (stateProvider) ->

@@ -10,7 +10,7 @@ define [
   "use strict";
 
   # Module
-  Article = angular.module("ngGo.article", [
+  Article = angular.module("ngPhonegap.article", [
     "ui.router"
     "ngAnimate"
     "ngResource"

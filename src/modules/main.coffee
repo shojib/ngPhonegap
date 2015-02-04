@@ -68,7 +68,7 @@ requirejs.config
 
 requirejs [
   "angular"
-  "ngGo"
+  "ngPhonegap"
   "framework7"
   "ngAnimate"
   "ngTranslate"
@@ -79,11 +79,11 @@ requirejs [
   "ngCookies"
   "ngResource"
   "uiRouter"
-], (angular, ngGo) ->
+], (angular, ngPhonegap) ->
 
   "use strict"
 
-  angular.bootstrap document, [ngGo["name"]]
+  angular.bootstrap document, [ngPhonegap["name"]]
 
   f7 = new Framework7()
 

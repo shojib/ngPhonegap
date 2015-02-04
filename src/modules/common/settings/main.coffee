@@ -8,7 +8,7 @@ define [
   "use strict"
   
   # Module
-  Settings = angular.module("ngGo.settings", [])
+  Settings = angular.module("ngPhonegap.settings", [])
 
   # Directive
   Settings.directive "settings", directive

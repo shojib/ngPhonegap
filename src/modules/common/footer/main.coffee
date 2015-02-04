@@ -8,7 +8,7 @@ define [
   "use strict"
   
   # Module
-  Footer = angular.module("ngGo.footer", [])
+  Footer = angular.module("ngPhonegap.footer", [])
 
   # Directive
   Footer.directive "footer", directive

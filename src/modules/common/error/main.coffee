@@ -5,7 +5,7 @@ define ["angular"], (angular) ->
   "use strict"
   
   # Module
-  Error = angular.module("ngGo.error", ["ui.router"])
+  Error = angular.module("ngPhonegap.error", ["ui.router"])
 
   # Router configuration
   Error.config ["$stateProvider", (state_provider) ->
