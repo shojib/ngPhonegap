@@ -25,6 +25,12 @@ module.exports = function(grunt) {
         cwd: '<%= pkg.folders.src %>/libs/',
         src: '**/*',
         dest: '<%= pkg.folders.build %>/libs'
+      },
+      icon: {
+        expand: true,
+        cwd: '<%= pkg.folders.src %>/',
+        src: 'icon.png',
+        dest: '<%= pkg.folders.build %>/'
       }
     },
 

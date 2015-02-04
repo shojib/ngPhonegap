@@ -2,8 +2,8 @@
 
 requirejs.config
   paths:
+    # cordova: "../cordova"
     angular: "../libs/angular/angular"
-    # jquery: "../libs/jquery/dist/jquery"
     framework7: "../libs/framework7/dist/js/framework7"
     ngCookies: "../libs/angular-cookies/angular-cookies"
     ngTranslate: "../libs/angular-translate/angular-translate"
@@ -19,11 +19,12 @@ requirejs.config
 
   shim:
 
-    angular:
-      exports: "angular"
+    # cordova:
+    #   exports: "cordova"
 
-    # jquery:
-    #   exports: "jquery"
+    angular:
+      # deps: ["cordova"]
+      exports: "angular"
 
     framework7:
       exports: "framework7"
