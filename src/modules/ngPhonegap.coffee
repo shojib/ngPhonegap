@@ -53,10 +53,10 @@ define [
       logProvider.debugEnabled true 
       
       # Add debug info (if false unit tests will fail)
-      compileProvider.debugInfoEnabled false
+      compileProvider.debugInfoEnabled true
       
       # Cluster possible http calls together
-      httpProvider.useApplyAsync false
+      httpProvider.useApplyAsync true
 
       # ================================================
 

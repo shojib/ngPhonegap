@@ -5,7 +5,7 @@ define [], () ->
   "use strict";
 
   # Controller
-  Ctrl = (scope, service) ->
+  Ctrl = (scope, service, log) ->
 
     # Default search query
     scope.search_query = "Technology"
@@ -17,6 +17,7 @@ define [], () ->
         # Find articles
         service.find_articles(scope.search_query).then((response) ->
           scope.articles = response
+          log.debug scope.articles
         )
 
 
@@ -24,6 +25,7 @@ define [], () ->
   Ctrl.$inject = [
     "$scope"
     "service"
+    "$log"
   ]
 
   # Return
