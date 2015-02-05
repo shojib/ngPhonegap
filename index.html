@@ -31,8 +31,74 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a name="ngphonegap" class="anchor" href="#ngphonegap"><span class="octicon octicon-link"></span></a>ngPhonegap</h1>
+        <h4>
+          <a name="build" class="anchor" href="#build"><span class="octicon octicon-link"></span></a>
+          Build
+        </h4>
+
+        <ol>
+          <li>Install NodeJS: <code><a href="http://nodejs.org/">http://nodejs.org/</a></code>
+          </li>
+          <li>Check to see if npm was installed: <code>npm -v</code>
+          </li>
+          <li>Install sass: <code>npm install sass -g</code>
+          </li>
+          <li>Install compass: <code>npm install compass -g</code>
+          </li>
+          <li>Install phantomjs: <code>npm install phantomjs -g</code>
+          </li>
+          <li>Install bower: <code>npm install bower -g</code>
+          </li>
+          <li>Install grunt-cli: <code>npm install grunt-cli -g</code>
+          </li>
+          <li>Install all dependencies: <code>npm install</code> [sudo]
+          </li>
+          <li>Install all JS libraries: <code>bower install</code>
+          </li>
+          <li>Build code<br>
+          <ul>
+          <li>Normal build: <code>grunt dev</code>
+          </li>
+          <li>Prod build: <code>grunt prod</code>
+          </li>
+          </ul>
+          </li>
+          <li>Phonegap<br>
+          <ul>
+          <li><code>npm install -g phonegap</code>
+          </li>
+          <li><code>phonegap platform add ios</code>
+          </li>
+          <li><code>phonegap prun ios -e</code>
+          </li>
+          </ul>
+          </li>
+        </ol>
+
+        <h4>
+          <a name="test" class="anchor" href="#test"><span class="octicon octicon-link"></span></a>
+          Unit and E2E Tests
+        </h4>
+
+        <ol>
+          <li><code><a href="http://docs.seleniumhq.org/download/">Get a standalone Selenium server.</a></code>
+          </li>
+          <li>Run the server: <code>java -jar selenium-server-standalone-2.44.0.jar</code>
+          </li>
+          <li>Run the tests: <code>grunt tests</code>
+          </li>
+          </ul>
+          </li>
+        </ol>
+
+        <h4>
+          <a name="run" class="anchor" href="#run"><span class="octicon octicon-link"></span></a>
+          Run
+        </h4>
+
+        <ol>
+          <li><code>grunt web</code></li>
+        </ol>
       </section>
     </div>
 
