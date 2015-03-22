@@ -109,6 +109,17 @@ module.exports = function(grunt) {
         ext: '.css'
       }
     },
+
+    watch: {
+      coffee: {
+        files: ['<%= pkg.folders.src %>/modules/**/*.coffee'],
+        tasks: 'coffee'
+      },
+      jade: {
+        files: ['<%= pkg.folders.src %>/*.jade', '<%= pkg.folders.src %>/modules/**/*.jade'],
+        tasks: 'jade'
+      }
+    },
     
     karma: {
       unit: {
@@ -167,6 +178,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-selenium-webdriver');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
@@ -215,7 +227,8 @@ module.exports = function(grunt) {
   // Web task(s).
   grunt.registerTask('web', [
     'dev', 
-    'connect:keepalive'
+    'connect:server',
+    'watch'
   ]);
 
   // Default task(s).
