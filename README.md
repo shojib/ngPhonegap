@@ -1,7 +1,7 @@
 ngPhonegap v0.1
 ====================
 
-ngPhonegap is a mobile AngularJS + Phonegap seed, which is an all javascript front-end solution. It works out of the box and contains some of the things that you need to kickstart your next mobile projects. The code is nicely modularized. It supports dependency management, unit tests, and e2e tests.
+ngPhonegap is a mobile AngularJS + Phonegap seed. It works out of the box and contains some of the things that you need to kickstart your next mobile projects. The code is nicely modularized. It supports dependency management, unit tests, and e2e tests.
 
 + Framework: AngularJS, Phonegap
 + Language: Coffee-Script
