@@ -1,0 +1,22 @@
+<div class="default-container">
+    <ul role="tablist" class="nav nav-tabs">
+        <li role="presentation"><a href="#/speedtest/angular/1">AngularJS Test 1</a></li>
+        <li role="presentation"><a href="#/speedtest/angular/2">AngularJS Test 2</a></li>
+        <li role="presentation"><a href="#/speedtest/react/1">ReactJS Test 1</a></li>
+        <li role="presentation"><a href="#/speedtest/react/2">ReactJS Test 2</a></li>
+    </ul>
+    <br/>
+    <div class="tab-content">
+        <button ng-if="!isTimerOn" (click)="startTimer()" class="btn btn-primary">Start </button>
+        <button ng-if="isTimerOn" (click)="stopTimer()" class="btn btn-danger">Stop</button>
+        <br/>
+        <br/>
+        <div class="speed-table grid">
+            <div template="ngFor #row of rows" class="row">
+                <div template="ngFor #column of columns" style="background-color:rgba({{rgba1[column][row]}},{{rgba2[column][row]}},{{rgba3[column][row]}},1)" class="col-md-1 thumbnail inline-center">
+                    <div>{{cell[column][row]}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

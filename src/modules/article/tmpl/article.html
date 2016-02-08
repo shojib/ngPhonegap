@@ -1,0 +1,33 @@
+<div class="default-container">
+
+<div class="col-lg">
+        <div class="col-lg">
+            <div class="input-group">
+                <input type="text" class="form-control" [(ngModel)]="searchQuery" />
+                <div class="input-group-btn">
+                    <button class="btn btn-default" (click)="ngOnInit()">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="input-group">
+                <input type="text" class="form-control" />
+                <div class="input-group-btn">
+                    <button class="btn btn-default">Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <ul class="media-group">
+        <li template="ngFor #article of articles" class="media repeat-item">
+            <a href="{{article.web_url}}" class="pull-right"><img template="ngIf article.multimedia[0]" src="http://www.nytimes.com/{{article.multimedia[0].url}}" class="media-object" /></a>
+            <div class="media-body">
+                <h4 class="media-heading"><a href="{{article.web_url}}">{{article.headline.main}}</a></h4>
+                <p class="media-text">{{article.lead_paragraph}}</p><small>{{article.pub_date}}</small>
+            </div>
+        </li>
+    </ul>
+    
+</div>

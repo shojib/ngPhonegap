@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    clean: ['dist'],
+    clean: ['public'],
 
     copy: {
       fonts: {
@@ -19,6 +19,42 @@ module.exports = function(grunt) {
         cwd: '<%= pkg.folders.src %>/i18n/',
         src: '*',
         dest: '<%= pkg.folders.build %>/i18n'
+      },
+      ng2: {
+        expand: true,
+        cwd: 'node_modules/angular2/bundles/',
+        src: '**/*',
+        dest: '<%= pkg.folders.src %>/libs/angular2/bundles'
+      },
+      rxjs: {
+        expand: true,
+        cwd: 'node_modules/rxjs/',
+        src: '**/*',
+        dest: '<%= pkg.folders.src %>/libs/rxjs'
+      },
+      js: {
+        expand: true,
+        cwd: '<%= pkg.folders.entity_src %>/',
+        src: '*.js',
+        dest: '<%= pkg.folders.entity_build %>'
+      },
+      allJs: {
+        expand: true,
+        cwd: '<%= pkg.folders.entity_src %>/',
+        src: '**/*.js',
+        dest: '<%= pkg.folders.entity_build %>'
+      },
+      index: {
+        expand: true,
+        cwd: '<%= pkg.folders.src %>/',
+        src: 'index.html',
+        dest: '<%= pkg.folders.build %>'
+      },
+      template: {
+        expand: true,
+        cwd: '<%= pkg.folders.entity_src %>/',
+        src: '**/*.html',
+        dest: '<%= pkg.folders.entity_build %>'
       },
       libs: {
         expand: true,
@@ -40,62 +76,38 @@ module.exports = function(grunt) {
       }
     },
 
-    requirejs: {
-      compile_prod: {
+    ts: {
+      default: {
+        src: ['<%= pkg.folders.entity_src %>/*.ts'],
+        dest: '<%= pkg.folders.entity_build %>',
+        // watch: '<%= pkg.folders.entity_src %>',
         options: {
-          baseUrl: '<%= pkg.folders.build %>/modules',
-          name: '../libs/almond/almond',
-          include: 'main',
-          mainConfigFile: '<%= pkg.folders.build %>/modules/main.js',
-          out: '<%= pkg.folders.build %>/modules/main.js',
-          optimize: 'uglify2',
-          generateSourceMaps: false,
-          preserveLicenseComments: false,
-          useSourceUrl: false,
-          uglify2: {
-            mangle: false
-          }
+          baseDir: '<%= pkg.folders.entity_src %>',
+          target: 'ES5',
+          module: 'commonjs',
+          sourceMap: true,
+          emitDecoratorMetadata: true,
+          experimentalDecorators: true,
+          removeComments: false,
+          noImplicitAny: false,
+          keepDirectoryHierarchy: true
         }
       },
-      compile_dev: {
+      all: {
+        src: ['<%= pkg.folders.entity_src %>/**/*.ts'],
+        dest: '<%= pkg.folders.entity_build %>',
+        // watch: '<%= pkg.folders.entity_src %>',
         options: {
-          baseUrl: '<%= pkg.folders.build %>/modules',
-          name: '../libs/almond/almond',
-          include: 'main',
-          mainConfigFile: '<%= pkg.folders.build %>/modules/main.js',
-          out: '<%= pkg.folders.build %>/modules/main.js',
-          optimize: 'none',
-          generateSourceMaps: false,
-          preserveLicenseComments: false,
-          useSourceUrl: false
+          baseDir: '<%= pkg.folders.entity_src %>',
+          target: 'ES5',
+          module: 'commonjs',
+          sourceMap: true,
+          emitDecoratorMetadata: true,
+          experimentalDecorators: true,
+          removeComments: false,
+          noImplicitAny: false,
+          keepDirectoryHierarchy: true
         }
-      }
-    },
-
-    coffee: {
-      compile_all: {
-        expand: true,
-        flatten: false,
-        cwd: '<%= pkg.folders.js_src %>',
-        src: ['**/*.coffee'],
-        dest: '<%= pkg.folders.js_build %>',
-        ext: '.js'
-      }
-    },
-
-    jade: {
-      compile: {
-        files: {
-          '<%= pkg.folders.build %>/index.html': '<%= pkg.folders.src %>/index.jade'
-        }
-      },
-      compile_all: {
-        expand: true,
-        flatten: false,
-        cwd: '<%= pkg.folders.js_src %>',
-        src: ['**/*.jade'],
-        dest: '<%= pkg.folders.js_build %>',
-        ext: '.html'
       }
     },
 
@@ -110,17 +122,45 @@ module.exports = function(grunt) {
       }
     },
 
+
     watch: {
-      coffee: {
-        files: ['<%= pkg.folders.src %>/modules/**/*.coffee'],
-        tasks: 'coffee'
+      typescript: {
+        files: ['<%= pkg.folders.entity_src %>/**/*.ts'],
+        tasks: 'ts',
+        options: {
+          livereload: true
+        }
       },
-      jade: {
-        files: ['<%= pkg.folders.src %>/*.jade', '<%= pkg.folders.src %>/modules/**/*.jade'],
-        tasks: 'jade'
+      js: {
+        files: ['<%= pkg.folders.entity_src %>/**/*.js'],
+        tasks: 'copy:allJs',
+        options: {
+          livereload: true
+        }
+      },
+      compass: {
+        files: ['<%= pkg.folders.src %>/scss/main.scss'],
+        tasks: 'compass',
+        options: {
+          livereload: true
+        }
+      },
+      index: {
+        files: ['<%= pkg.folders.src %>/*.html'],
+        tasks: 'copy:index',
+        options: {
+          livereload: true
+        }
+      },
+      template: {
+        files: ['<%= pkg.folders.entity_src %>/**/*.html'],
+        tasks: 'copy:template',
+        options: {
+          livereload: true
+        }
       }
     },
-    
+
     karma: {
       unit: {
         configFile: 'karma.conf.js'
@@ -150,15 +190,15 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options:  {
-          port: 8000,
-          base: '<%= pkg.folders.build %>/',
+          port: 9900,
+          base: '<%= pkg.folders.build %>',
           hostname: 'localhost'
         }
       },
       keepalive: {
         options:  {
           port: 8000,
-          base: '<%= pkg.folders.build %>/',
+          base: '<%= pkg.folders.build %>',
           hostname: 'localhost',
           keepalive: true
         }
@@ -168,14 +208,13 @@ module.exports = function(grunt) {
   });
 
   // Load the plugins for all the tasks.
-  grunt.loadNpmTasks('grunt-contrib-coffee');
+  // grunt.loadNpmTasks("grunt-typescript");
+  grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-selenium-webdriver');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -190,10 +229,10 @@ module.exports = function(grunt) {
   // E2E task(s).
   grunt.registerTask('e2e', [
     'connect:server',
-    'selenium_start', 
-    'selenium_phantom_hub', 
+    'selenium_start', // PhantomJS only
+    'selenium_phantom_hub', // PhantomJS only
     'protractor:e2e',
-    'selenium_stop'
+    'selenium_stop' // PhantomJS only
   ]);
 
   // Test task(s).
@@ -201,50 +240,35 @@ module.exports = function(grunt) {
     'unit',
     'e2e'
   ]);
-  
+
+  // Build task(s).
+  grunt.registerTask('compile', [
+    'clean',
+    'copy',
+    'ts',
+    'compass'
+  ]);
+
   // Build task(s).
   grunt.registerTask('prod', [
-    'clean', 
-    'copy', 
-    'coffee', 
-    'jade', 
-    'compass', 
-    'requirejs:compile_prod'
-    // 'tests'
+    'compile'
   ]);
-  
+
   // Build task(s).
   grunt.registerTask('dev', [
-    'clean', 
-    'copy', 
-    'coffee', 
-    'jade', 
-    'compass'
-    // 'requirejs:compile_dev'
-    // 'tests'
+    'compile'
   ]);
-  
+
   // Web task(s).
   grunt.registerTask('web', [
-    'dev', 
+    'dev',
     'connect:server',
     'watch'
   ]);
 
   // Default task(s).
   grunt.registerTask('default', [
-    'dev'
+    'webgrunt '
   ]);
 
 };
-
-
-
-
-
-
-
-
-
-
-
